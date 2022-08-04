@@ -1,0 +1,5 @@
+{{ $problem := (index .Site.Data.uva .Params.number) }}
+{{ $id := (index $problem "id") }}
+{{ $name := (index $problem "name") }}
+
+<a href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem={{$id}}"> {{ .Params.number }} - {{ $name }} </a> 

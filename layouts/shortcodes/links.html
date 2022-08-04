@@ -1,0 +1,27 @@
+
+{{ with $.Page.Params.links }}
+  {{ range $cat := . }}
+  {{ with (index $cat "category") }}
+    <h3> {{ (index $cat "category") }} </h3>
+    <ul>
+        {{ range $link := (index $cat "links") }}
+          {{ if (index $link "display") }}
+            {{ if (index $link "uva") }}
+               {{ $number := printf "%d" (index $link "uva") }}
+               {{ $problem := (index $.Site.Data.uva $number) }}
+               {{ $id := (index $problem "id") }}
+               {{ $name := (index $problem "name") }}
+
+      <li><a href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem={{$id}}"> {{ $number }} - {{ $name }} </a>
+              {{ (index $link "description") }}</li>
+            {{ end }}
+          {{ if (index $link "title") }}
+          <li> <a href={{ (index $link "url") }}>{{ (index $link "title") }} </a>
+              {{ (index $link "description") }}</li>
+          {{ end }}
+          {{ end }}
+        {{ end }}
+    </ul>
+    {{ end }}
+  {{ end }}
+{{ end }}
