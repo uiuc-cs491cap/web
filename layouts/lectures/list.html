@@ -2,13 +2,13 @@
 {{- partial "page_header.html" . -}}
 <div class="universal-wrapper">
 
-  <table>
+  <table style="overflow-x: auto">
           <tr>
                   <th>Date</th>
                   <th>Title</ht>
           </tr>
   {{range sort .Site.Data.lectures "date"}}
-          {{ $path := (printf "/lectures/%s" (index . "slug")) }}
+          {{ $path := (printf "%s" (index . "slug")) }}
           <tr><td> {{ dateFormat "Monday, January 2, 2006" (index . "date") }} </td>
               <td> <a href={{$path}}>{{ index . "title" }}</a> </td>
           </tr>
