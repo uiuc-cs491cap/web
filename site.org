@@ -1,0 +1,18 @@
+#+HUGO_BASE_DIR: .
+#+MACRO: uva @@hugo:{{<UVa2 number="$1" >}}@@
+
+* Lectures
+:PROPERTIES:
+:HUGO_SECTION: lectures
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
+:EXPORT_HUGO_SECTION: lectures
+:END:
+
+** Course Introduction
+:PROPERTIES:
+:ID:       d6691455-f4dc-44ec-b6ae-2b169766e1af
+:EXPORT_FILE_NAME: course-introduction
+:END:
+
+Welcome to Competitive Programming!  Today we will talk about the benefits of competitive programming, the course structure, and the tools we will
+use in the course.
