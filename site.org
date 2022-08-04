@@ -95,3 +95,18 @@ This is where the syllabus will be.
 
 Welcome to Competitive Programming!  Today we will talk about the benefits of competitive programming, the course structure, and the tools we will
 use in the course.
+
+** IO
+:PROPERTIES:
+:EXPORT_FILE_NAME: io
+:END:
+
+The first thing your program needs to do is read in the test data and convert it to an internal structure.
+There are several patterns that test cases follow, and you will need to handle each one a bit differently.
+It all comes down to knowing how much data you are going to get.  There are three primary ways you find this out:
+
+- An explicit count
+- A special marker (like a terminating zero)
+- Simply getting an end-of-file
+
+We will also talk about formatting options.
