@@ -114,3 +114,7 @@ We will also talk about formatting options.
 We don't have a video for this lecture, but here are some slides with all the content.
 
 - [[../../slides/io-slides.pdf][IO Slides]]
+
+The problems for this class are at
+
+- [[https://codeforces.com/group/PHxDiFeaeq/contest/372486][IO Problems]]

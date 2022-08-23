@@ -17,3 +17,7 @@ We will also talk about formatting options.
 We don't have a video for this lecture, but here are some slides with all the content.
 
 -   [IO Slides](../../slides/io-slides.pdf)
+
+The problems for this class are at
+
+-   [IO Problems](https://codeforces.com/group/PHxDiFeaeq/contest/372486)
