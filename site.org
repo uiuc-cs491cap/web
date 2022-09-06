@@ -215,3 +215,17 @@ We don't have a video for this lecture, but here are some slides with all the co
 The problems for this class are at
 
 - [[https://codeforces.com/group/PHxDiFeaeq/contest/372486][IO Problems]]
+
+** Dictionaries and Sets
+:PROPERTIES:
+:EXPORT_FILE_NAME: dictionaries-and-sets
+:END:
+
+We will talk about how to create dictionaries in C++ and in [[class:sc][Python]], and some of the operations available to you.
+
+- [[../../slides/dictionaries-and-sets-slides.pdf][Dictionaries and Sets Slides]]
+- [[https://mediaspace.illinois.edu/media/t/1_jk9tjhx0][Dictionaries and Sets Video]]
+
+The problems for this class are at
+
+- [[https://codeforces.com/group/PHxDiFeaeq/contest/372486][IO Problems]]
