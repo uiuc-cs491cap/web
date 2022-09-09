@@ -6,7 +6,7 @@ draft = false
 
 ## Video {#video}
 
--   [Sieve of Eratosthenes](/videos/sieve-of-eratosthenes)
+-   [Sieve of Eratosthenes](../videos/sieve-of-eratosthenes)
 
 
 ## Recommended Reading {#recommended-reading}
