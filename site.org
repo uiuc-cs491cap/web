@@ -253,7 +253,7 @@ The problems for this class are at
 
 *** Video
 
-  - [[../videos/sieve-of-eratosthenes][Sieve of Eratosthenes]]
+  - [[../../videos/sieve-of-eratosthenes][Sieve of Eratosthenes]]
 
 *** Recommended Reading
 
