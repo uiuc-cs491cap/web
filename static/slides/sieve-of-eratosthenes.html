@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Sieve Of Eratosthenes</title>
+<meta name="author" content="Mattox Beckman"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../dist/reveal.css"/>
+
+<link rel="stylesheet" href="../dist/theme/beige.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="../plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Sieve Of Eratosthenes</h1><h2 class="author">Mattox Beckman</h2>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-org81d0b0a">Your Objectives:</a></li>
+<li><a href="#/slide-org61d5e42">Calculating Primes the Hard Way</a></li>
+<li><a href="#/slide-org99dbad2">A slight improvement</a></li>
+<li><a href="#/slide-orgba08d80">Improvement 2 – Stop at \(\sqrt{p}\)</a></li>
+<li><a href="#/slide-org2551796">The Sieve</a></li>
+<li><a href="#/slide-orgb997ce5">Factoring</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-org81d0b0a">
+<h2 id="org81d0b0a">Your Objectives:</h2>
+<ul>
+<li>Be able to implement the Sieve of Eratosthenes</li>
+<li>Enumerate some applications of prime numbers</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org61d5e42">
+<h2 id="org61d5e42">Calculating Primes the Hard Way</h2>
+<ul>
+<li>You need to see if a number is prime / factorize a number. How can you do that?</li>
+<li>Trial division&#x2026;</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >pIsPrime = true;
+for(i=2; i&lt;p; ++i)
+  if (p % i == 0) {
+    pIsPrime = false;
+    break;
+  }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org99dbad2">
+<h2 id="org99dbad2">A slight improvement</h2>
+<ul>
+<li>Improvement 1: only check the odd numbers</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="c++" >pIsPrime = true;
+if (p % 2 == 0)
+  pIsPrime = false;
+ else
+   for(i=3; i&lt;p; i+=2)
+     if (p % i == 0) {
+       pIsPrime = false;
+       break;
+     }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgba08d80">
+<h2 id="orgba08d80">Improvement 2 – Stop at \(\sqrt{p}\)</h2>
+<ul>
+<li>We can stop at \(\sqrt{p}\).</li>
+<li>If \(q > p\) and \(q|p\), then there is a factor \(k < p\) such that \(kq = p\).</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >#include &lt;cmath&gt;
+int sqrtP = std::sqrt(p)
+  pIsPrime = true;
+if (p % 2 == 0)
+  pIsPrime = false;
+ else
+   for(i=3; i&lt;sqrtP; i+=2)
+     if (p % i == 0) {
+       pIsPrime = false;
+       break;
+     }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org2551796">
+<h2 id="org2551796">The Sieve</h2>
+<ul>
+<li>Stolen from <i>From Competitive Programming 3</i></li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="c++" >#include &lt;bitset&gt;
+ll _sieve_size; // 10^7 should be enough for most cases
+bitset&lt;10000010&gt; bs;
+vi primes;
+void sieve(ll upperbound) {
+  _sieve_size = upperbound + 1;
+  bs.set(); // all bits set to 1
+  bs[0] = bs[1] = 0;
+  for (ll i = 2; i &lt;= _sieve_size; i++)
+    if (bs[i]) { // cross out multiples of i starting from i * i!
+      for (ll j = i * i; j &lt;= _sieve_size; j += i) bs[j] = 0;
+      primes.push_back((int)i);
+    } }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb997ce5">
+<h2 id="orgb997ce5">Factoring</h2>
+<ul>
+<li>Stolen from From Competitive Programming 3</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="c++" >vi primeFactors(ll N) {
+  vi factors;
+  ll PF_idx = 0, PF = primes[PF_idx]; // primes has been populated by sie
+  while (PF * PF &lt;= N) {
+    while (N % PF == 0) {
+      N /= PF; factors.push_back(PF); }
+    PF = primes[++PF_idx];
+  }
+  // special case if N is a prime
+  if (N != 1) factors.push_back(N);
+  return factors;
+}
+</code></pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'none',
+transitionSpeed: 'default',
+hash:true, respond_to_hash_changes:true, max_scale:2.0, width:1200, height:900, center:false,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealNotes ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
