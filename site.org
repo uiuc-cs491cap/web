@@ -259,6 +259,19 @@ The problems for this class are at
 
   - Competitive Programming 4, section 5.3.1--5
 
+** Minimum Spanning Trees
+:PROPERTIES:
+:EXPORT_FILE_NAME: minimum-spanning-trees
+:END:
+
+*** Synopsis
+
+Last time we talked about graph representations and reviewed disjoint sets.  Now we will use that to solve
+minimum spanning tree problems.
+
+*** Slides
+
+- [[../../slides/minimum-spanning-trees-slides.pdf][Minimum Spanning Trees Slides]]
 
 * Videos
 :PROPERTIES:
