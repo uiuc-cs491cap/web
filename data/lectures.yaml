@@ -17,3 +17,13 @@ prime-numbers:
   date: 2022-09-12
   title: Prime Numbers
   slug: prime-numbers
+
+minimum-spanning-trees:
+  date: 2022-09-26
+  title: Minimum Spanning Trees
+  slug: minimum-spanning-trees
+
+graph-traversals-1:
+  date: 2022-09-28
+  title: Graph Traversals 1
+  slug: graph-traversals-1

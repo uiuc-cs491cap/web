@@ -192,13 +192,8 @@ This is where the syllabus will be.
 *** Synopsis
 
 
-*** Video
+*** Slides
 
-  - [[/videos/video-slug][Video Title]]
-
-*** Recommended Reading
-
-  - Competitive Programming 4,
 
 ** Course Introduction
 :PROPERTIES:
@@ -272,6 +267,20 @@ minimum spanning tree problems.
 *** Slides
 
 - [[../../slides/minimum-spanning-trees-slides.pdf][Minimum Spanning Trees Slides]]
+
+** Graph Traversals, Part 1
+:PROPERTIES:
+:EXPORT_FILE_NAME: graph-traversals-1
+:END:
+
+*** Synopsis
+
+We will go over the basic implementations of DFS and BFS, and show a couple of simple applications like
+flood fill, connected components, and topological sort.
+
+*** Slides
+
+- [[../../slides/graph-traversals-1-slides.pdf][Graph Traversals 1]]
 
 * Videos
 :PROPERTIES:
