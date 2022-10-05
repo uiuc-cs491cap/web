@@ -27,3 +27,13 @@ graph-traversals-1:
   date: 2022-09-28
   title: Graph Traversals 1
   slug: graph-traversals-1
+
+graph-traversals-2:
+  date: 2022-10-03
+  title: Graph Traversals 2
+  slug: graph-traversals-2
+
+single-source-shortest-path:
+  date: 2022-10-05
+  title: Single Source Shortest Path
+  slug: single-source-shortest-path

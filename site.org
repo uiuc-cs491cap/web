@@ -282,6 +282,35 @@ flood fill, connected components, and topological sort.
 
 - [[../../slides/graph-traversals-1-slides.pdf][Graph Traversals 1]]
 
+** Graph Traversals, Part 2
+:PROPERTIES:
+:EXPORT_FILE_NAME: graph-traversals-2
+:END:
+
+*** Synopsis
+
+This lecture will cover more advanced use of BFS and DSF, such as checking if a graph is bipartite, finding cut edges, and finding articulation points.
+
+*** Slides
+
+- [[../../slides/graph-traversals-2-slides.pdf][Graph Traversals 2]]
+
+** Single Source Shortest Path
+:PROPERTIES:
+:EXPORT_FILE_NAME: single-source-shortest-path
+:END:
+
+*** Synopsis
+
+We will show how to use breadth first search to find shortest paths in unweighted graphs, and Dijkstra's algorithm for weighted graphs.
+
+You will have to wait to find out what to do about negative weight cycles!
+
+*** Slides
+
+- [[../../slides/bfs-shortest-path-slides.pdf][BFS Shortest Path]]
+- [[../../slides/dijkstra-shortest-path-slides.pdf][Dijkstra Shortest Path]]
+
 * Videos
 :PROPERTIES:
 :HUGO_SECTION: videos
