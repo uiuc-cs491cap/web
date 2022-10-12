@@ -37,3 +37,8 @@ single-source-shortest-path:
   date: 2022-10-05
   title: Single Source Shortest Path
   slug: single-source-shortest-path
+
+all-pairs-shortest-path:
+  date: 2022-10-12
+  title: All Pairs Shortest Path
+  slug: all-pairs-shortest-path
