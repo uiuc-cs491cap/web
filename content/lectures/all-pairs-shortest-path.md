@@ -11,5 +11,5 @@ We will cover Bellman Ford, which handles negative weight cycles, and Floyd-Wars
 
 ## Slides {#slides}
 
--   [Bellman Ford and SPFA](../../slides/bellman-forld--and-spfa-slides.pdf)
+-   [Bellman Ford and SPFA](../../slides/bellman-ford-and-spfa-slides.pdf)
 -   [Floyd Warshall](../../slides/floyd-warshall-slides.pdf)
