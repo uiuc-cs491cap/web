@@ -325,6 +325,19 @@ We will cover Bellman Ford, which handles negative weight cycles, and Floyd-Wars
 - [[../../slides/bellman-ford-and-spfa-slides.pdf][Bellman Ford and SPFA]]
 - [[../../slides/floyd-warshall-slides.pdf][Floyd Warshall]]
 
+** Greedy Algorithms
+:PROPERTIES:
+:EXPORT_FILE_NAME: greedy-algorithms
+:END:
+
+*** Synopsis
+
+We will cover Bellman Ford, which handles negative weight cycles, and Floyd-Warshall, which gives the shortest path between every pair of points.
+
+*** Slides
+
+- [[../../slides/greedy-algorithms-slides.pdf][Greedy Algorithms]]
+
 * Videos
 :PROPERTIES:
 :HUGO_SECTION: videos

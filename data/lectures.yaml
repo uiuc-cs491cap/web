@@ -42,3 +42,8 @@ all-pairs-shortest-path:
   date: 2022-10-12
   title: All Pairs Shortest Path
   slug: all-pairs-shortest-path
+
+greedy-algorithms:
+  date: 2022-10-17
+  title: Greedy Algorithms
+  slug: greedy-algorithms
