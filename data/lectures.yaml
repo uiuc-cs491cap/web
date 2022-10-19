@@ -47,3 +47,8 @@ greedy-algorithms:
   date: 2022-10-17
   title: Greedy Algorithms
   slug: greedy-algorithms
+
+complete-search:
+  date: 2022-10-19
+  title: Complete Search
+  slug: complete-search
