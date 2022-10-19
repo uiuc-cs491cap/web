@@ -338,6 +338,20 @@ We will cover Bellman Ford, which handles negative weight cycles, and Floyd-Wars
 
 - [[../../slides/greedy-algorithms-slides.pdf][Greedy Algorithms]]
 
+** Complete Search
+:PROPERTIES:
+:EXPORT_FILE_NAME: complete-search
+:END:
+
+*** Synopsis
+
+Some classes of problems require you to check the entire search-space to find the solutions, possibly with the the ablility to prune search paths
+that cannot yield the answer.
+
+*** Slides
+
+- [[../../slides/complete-search-slides.pdf][Complete Search]]
+
 * Videos
 :PROPERTIES:
 :HUGO_SECTION: videos
