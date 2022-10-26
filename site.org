@@ -352,6 +352,36 @@ that cannot yield the answer.
 
 - [[../../slides/complete-search-slides.pdf][Complete Search]]
 
+** Dynamic Programming
+:PROPERTIES:
+:EXPORT_FILE_NAME: complete-search
+:END:
+
+*** Synopsis
+
+If you have overlapping subproblems but do not have the greedy property, perhaps dynamic programming will help!
+
+In this lecture we will talk about the exact change problem.
+
+*** Slides
+
+- [[../../slides/dynamic-programming-slides.pdf][Dynamic Programming]]
+
+
+** DP 2 - LCS and LIS
+:PROPERTIES:
+:EXPORT_FILE_NAME: dp-2-lcs-lis
+:END:
+
+*** Synopsis
+
+Another kind of DP problem!  This time we are looking for subsequences that have certain properties.
+
+*** Slides
+
+- [[../../slides/dp-2-lcs-lis-slides.pdf][DP 2 - LCS and LIS]]
+
+
 * Videos
 :PROPERTIES:
 :HUGO_SECTION: videos
@@ -436,3 +466,8 @@ to the time limit.
 One important applications of primes is factoring integers.  Here is the code.  You do it by starting with 2 and
 incrementally picking the next largest prime number.  If you find a prime that is a factor, divide it off repeatedly
 until it's not a factor anymore, and then move to the next prime.
+
+* End :noexport:
+;; Local Variables:
+;; eval: (org-link-set-parameters "class" :export #'my-org-export-class-link)
+;; End:

@@ -52,3 +52,13 @@ complete-search:
   date: 2022-10-19
   title: Complete Search
   slug: complete-search
+
+dynamic-programming:
+  date: 2022-10-24
+  title: Dynamic Programming
+  slug: dynamic-programming
+
+dp-2-lcs-lis:
+  date: 2022-10-26
+  title: DP 2: LCS and LIS
+  slug: dp-2-lcs-lis
