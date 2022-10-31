@@ -62,3 +62,8 @@ dp-2-lcs-lis:
   date: 2022-10-26
   title: DP 2 - LCS and LIS
   slug: dp-2-lcs-lis
+
+classic-string-dp:
+  date: 2022-10-31
+  title: Classic String DP
+  slug: classic-string-dp

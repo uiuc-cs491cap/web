@@ -382,6 +382,22 @@ Another kind of DP problem!  This time we are looking for subsequences that have
 - [[../../slides/dp-2-lcs-lis-slides.pdf][DP 2 - LCS and LIS]]
 
 
+** Classic String DP
+:PROPERTIES:
+:EXPORT_FILE_NAME: classic-string-dp
+:END:
+
+*** Synopsis
+
+We will go over two classic problems for strings using DP:
+- Edit distance (Levinstein Distance)
+- Palindrome detection
+
+*** Slides
+
+- [[../../slides/classic-string-dp-slides.pdf][Classic String DP]]
+
+
 * Videos
 :PROPERTIES:
 :HUGO_SECTION: videos
