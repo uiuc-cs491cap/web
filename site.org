@@ -354,7 +354,7 @@ that cannot yield the answer.
 
 ** Dynamic Programming
 :PROPERTIES:
-:EXPORT_FILE_NAME: complete-search
+:EXPORT_FILE_NAME: dynamic-programming
 :END:
 
 *** Synopsis
@@ -397,6 +397,19 @@ We will go over two classic problems for strings using DP:
 
 - [[../../slides/classic-string-dp-slides.pdf][Classic String DP]]
 
+
+** String Matching
+:PROPERTIES:
+:EXPORT_FILE_NAME: kmp
+:END:
+
+*** Synopsis
+
+We will go over the KMP string matching algorithm.
+
+*** Slides
+
+- [[../../slides/kmp-slides.pdf][KMP Algorithm]]
 
 * Videos
 :PROPERTIES:

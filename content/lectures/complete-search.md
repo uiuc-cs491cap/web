@@ -1,16 +1,15 @@
 +++
-title = "Dynamic Programming"
+title = "Complete Search"
 author = ["Mattox Beckman"]
 draft = false
 +++
 
 ## Synopsis {#synopsis}
 
-If you have overlapping subproblems but do not have the greedy property, perhaps dynamic programming will help!
-
-In this lecture we will talk about the exact change problem.
+Some classes of problems require you to check the entire search-space to find the solutions, possibly with the the ablility to prune search paths
+that cannot yield the answer.
 
 
 ## Slides {#slides}
 
--   [Dynamic Programming](../../slides/dynamic-programming-slides.pdf)
+-   [Complete Search](../../slides/complete-search-slides.pdf)
