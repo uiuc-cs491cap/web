@@ -398,7 +398,7 @@ We will go over two classic problems for strings using DP:
 - [[../../slides/classic-string-dp-slides.pdf][Classic String DP]]
 
 
-** String Matching
+** KMP
 :PROPERTIES:
 :EXPORT_FILE_NAME: kmp
 :END:

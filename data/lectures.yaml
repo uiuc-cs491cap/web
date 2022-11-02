@@ -70,5 +70,5 @@ classic-string-dp:
 
 kmp:
   date: 2022-10-31
-  title: Classic String DP
-  slug: classic-string-dp
+  title: KMP
+  slug: kmp
