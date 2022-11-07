@@ -1,5 +1,5 @@
 +++
-title = "String Matching"
+title = "KMP"
 author = ["Mattox Beckman"]
 draft = false
 +++

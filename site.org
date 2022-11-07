@@ -411,6 +411,16 @@ We will go over the KMP string matching algorithm.
 
 - [[../../slides/kmp-slides.pdf][KMP Algorithm]]
 
+** Points, Lines, and Vectors
+:PROPERTIES:
+:EXPORT_FILE_NAME: points-lines-vectors
+:END:
+
+
+*** Slides
+
+- [[../../slides/points-lines-vectors-slides.pdf][Points, Lines, and Vectors]]
+
 * Videos
 :PROPERTIES:
 :HUGO_SECTION: videos
