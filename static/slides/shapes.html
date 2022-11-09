@@ -3,48 +3,40 @@
 <head>
 <meta charset="utf-8"/>
 <title>Circles, Triangles, and Squares</title>
+<meta name="author" content="Mattox Beckman"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="assets/reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="../dist/reveal.css"/>
 
-<link rel="stylesheet" href="assets/reveal.js/css/theme/sky.css" id="theme"/>
+<link rel="stylesheet" href="../dist/theme/beige.css" id="theme"/>
 
-<link rel="stylesheet" href="cs491.css"/>
-<link rel="stylesheet" href="assets/reveal.js/lib/css/zenburn.css"/>
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'assets/reveal.js/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
-</script>
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="../plugin/highlight/zenburn.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Circles, Triangles, and Squares</h1><p class="date">Created: 2019-11-12 Tue 12:44</p>
+<section id="sec-title-slide">
+<h1 class="title">Circles, Triangles, and Squares</h1><h2 class="author">Mattox Beckman</h2>
 </section>
-<section id="table-of-contents">
-<div id="table-of-contents">
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#/slide-org05ccf9a">Objectives</a></li>
-<li><a href="#/slide-org7aad82e">Circles</a></li>
-<li><a href="#/slide-org27f4afa">Triangles</a></li>
+<li><a href="#/slide-orgf9deaf3">Objectives</a></li>
+<li><a href="#/slide-org2c9126a">Circles</a></li>
+<li><a href="#/slide-org0dc33f5">Triangles</a></li>
 </ul>
 </div>
 </div>
 </section>
 
 <section>
-<section id="slide-org05ccf9a">
-<h2 id="org05ccf9a">Objectives</h2>
+<section id="slide-orgf9deaf3">
+<h2 id="orgf9deaf3">Objectives</h2>
 <ul>
 <li>Know some of the basic formulae for
 <ul>
@@ -60,15 +52,15 @@
 </section>
 </section>
 <section>
-<section id="slide-org7aad82e">
-<h2 id="org7aad82e">Circles</h2>
-<div class="outline-text-2" id="text-org7aad82e">
+<section id="slide-org2c9126a">
+<h2 id="org2c9126a">Circles</h2>
+<div class="outline-text-2" id="text-org2c9126a">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org7b9f3be">
-<h3 id="org7b9f3be">Testing if Inside</h3>
+<section id="slide-orga2bfd71">
+<h3 id="orga2bfd71">Testing if Inside</h3>
 <ul>
 <li>For a circle, you need a center \( (a,b)\) and a radius \(r\).</li>
 <li>All points \( (x-a)^2 + (y-b)^2 = r^2\)</li>
@@ -90,8 +82,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgad4e2a2">
-<h3 id="orgad4e2a2">Basic Formulae</h3>
+<section id="slide-org6de6ce8">
+<h3 id="org6de6ce8">Basic Formulae</h3>
 <ul>
 <li>Value of \(\pi\) is <code>acos(-1.0)</code></li>
 <li>Diameter \(d = 2r\)</li>
@@ -118,15 +110,15 @@
 </section>
 </section>
 <section>
-<section id="slide-org27f4afa">
-<h2 id="org27f4afa">Triangles</h2>
-<div class="outline-text-2" id="text-org27f4afa">
+<section id="slide-org0dc33f5">
+<h2 id="org0dc33f5">Triangles</h2>
+<div class="outline-text-2" id="text-org0dc33f5">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-orgb027aad">
-<h3 id="orgb027aad">Types</h3>
+<section id="slide-orga6dd444">
+<h3 id="orga6dd444">Types</h3>
 <ul>
 <li>Types of triangles:
 <dl>
@@ -142,8 +134,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orge7b568e">
-<h3 id="orge7b568e">Area Calculations</h3>
+<section id="slide-org9725426">
+<h3 id="org9725426">Area Calculations</h3>
 <dl>
 <dt>Given</dt><dd>sides \(a,b,c\)</dd>
 <dt>Perimeter</dt><dd>\(p = a + b + c, s = {p\over 2}\)</dd>
@@ -154,8 +146,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org3f285ff">
-<h3 id="org3f285ff">Circles</h3>
+<section id="slide-org5ccde14">
+<h3 id="org5ccde14">Circles</h3>
 <ul>
 <li>Triangle contain an <i>inscribed cirlce</i>:</li>
 
@@ -185,8 +177,8 @@ int inCircle(point p1, point p2, point p3, point &amp;ctr, double &amp;r) {
 </section>
 </section>
 <section>
-<section id="slide-orgbfb6076">
-<h3 id="orgbfb6076">Circumscribed Circles</h3>
+<section id="slide-orgd9ef471">
+<h3 id="orgd9ef471">Circumscribed Circles</h3>
 <ul>
 <li>Triangle can be enclosed by an <i>circumscribed cirlce</i>:</li>
 <li>Radius is \(R = {a * b * c / (4 * area(a,b,c)}\)</li>
@@ -205,8 +197,8 @@ double rCircumCircle(point a, point b, point c) {
 </section>
 </section>
 <section>
-<section id="slide-orgb349088">
-<h3 id="orgb349088">Trigonometrics</h3>
+<section id="slide-orgee0d951">
+<h3 id="orgee0d951">Trigonometrics</h3>
 <dl>
 <dt>Is a triangle possible?</dt><dd>\(a + b > c\), where \(c\) is largest side.</dd>
 <dt>Pythagorean Theorem</dt><dd>\(a^2 + b^2 = c^2 \)</dd>
@@ -218,23 +210,38 @@ double rCircumCircle(point a, point b, point c) {
 </section>
 </div>
 </div>
-<script src="assets/reveal.js/js/reveal.js"></script>
-
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/notes/notes.js"></script>
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-transition:'page', width:1600, height:900,
-multiplex: {
-    secret: '', // null if client
-    id: '', // id, obtained from socket.io server
-    url: '' // Location of socket.io server
-},
 
-// Optional libraries used to extend on reveal.js
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'none',
+transitionSpeed: 'default',
+hash:true, respond_to_hash_changes:true, max_scale:2.0, width:1200, height:900, center:false,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealNotes ],
+
+// Optional libraries used to extend reveal.js
 dependencies: [
-{src: 'reveald3.js'},
- { src: 'assets/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+]
+
 });
 </script>
 </body>
