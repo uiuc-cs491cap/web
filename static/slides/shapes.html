@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Circles, Triangles, and Squares</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="assets/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="assets/reveal.js/css/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="cs491.css"/>
+<link rel="stylesheet" href="assets/reveal.js/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'assets/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Circles, Triangles, and Squares</h1><p class="date">Created: 2019-11-12 Tue 12:44</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-org05ccf9a">Objectives</a></li>
+<li><a href="#/slide-org7aad82e">Circles</a></li>
+<li><a href="#/slide-org27f4afa">Triangles</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-org05ccf9a">
+<h2 id="org05ccf9a">Objectives</h2>
+<ul>
+<li>Know some of the basic formulae for
+<ul>
+<li>Circles</li>
+<li>Triangles</li>
+<li>Squares</li>
+
+</ul></li>
+<li>Most code samples from <a href="https://cpbook.net/">Competitive Programming 3.</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org7aad82e">
+<h2 id="org7aad82e">Circles</h2>
+<div class="outline-text-2" id="text-org7aad82e">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org7b9f3be">
+<h3 id="org7b9f3be">Testing if Inside</h3>
+<ul>
+<li>For a circle, you need a center \( (a,b)\) and a radius \(r\).</li>
+<li>All points \( (x-a)^2 + (y-b)^2 = r^2\)</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >int insideCircle(point_i p, point_i c, int r) { // all integer version
+   int dx = p.x - c.x, dy = p.y - c.y;
+   int Euc = dx * dx + dy * dy, rSq = r * r;
+    // all integer
+   return Euc &lt; rSq ? 0 : Euc == rSq ? 1 : 2;
+   // 0 = inside, 1 = on border, 2 = outside
+}
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgad4e2a2">
+<h3 id="orgad4e2a2">Basic Formulae</h3>
+<ul>
+<li>Value of \(\pi\) is <code>acos(-1.0)</code></li>
+<li>Diameter \(d = 2r\)</li>
+<li>Circumference is \(2 \pi r\), area is \(\pi r^2\)</li>
+<li>Given two points <code>p1</code> and <code>p2</code> and radius <code>r</code>, we can compute the circles:</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >bool circle2PtsRad(point p1, point p2, double r, point &amp;c) {
+   double d2 = (p1.x - p2.x) * (p1.x - p2.x) +
+               (p1.y - p2.y) * (p1.y - p2.y);
+   double det = r * r / d2 - 0.25;
+   if (det &lt; 0.0) return false;
+   double h = sqrt(det);
+   c.x = (p1.x + p2.x) * 0.5 + (p1.y - p2.y) * h;
+   c.y = (p1.y + p2.y) * 0.5 + (p2.x - p1.x) * h;
+   return true;
+}
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org27f4afa">
+<h2 id="org27f4afa">Triangles</h2>
+<div class="outline-text-2" id="text-org27f4afa">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgb027aad">
+<h3 id="orgb027aad">Types</h3>
+<ul>
+<li>Types of triangles:
+<dl>
+<dt>Equilateral</dt><dd>All three sides the same, all angles are 60 degrees</dd>
+<dt>Isosceles</dt><dd>Two edges the same, two degrees the same.</dd>
+<dt>Scalene</dt><dd>All edges different</dd>
+<dt>Right</dt><dd>One angle 90 degrees</dd>
+
+</dl></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge7b568e">
+<h3 id="orge7b568e">Area Calculations</h3>
+<dl>
+<dt>Given</dt><dd>sides \(a,b,c\)</dd>
+<dt>Perimeter</dt><dd>\(p = a + b + c, s = {p\over 2}\)</dd>
+<dt>Area</dt><dd>\( \sqrt{s (s-a)(s-b)(s-c)} \)</dd>
+
+</dl>
+
+</section>
+</section>
+<section>
+<section id="slide-org3f285ff">
+<h3 id="org3f285ff">Circles</h3>
+<ul>
+<li>Triangle contain an <i>inscribed cirlce</i>:</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >double rInCircle(double ab, double bc, double ca) {
+   return area(ab, bc, ca) / (0.5 * perimeter(ab, bc, ca)); }
+double rInCircle(point a, point b, point c) {
+   return rInCircle(dist(a, b), dist(b, c), dist(c, a)); }
+int inCircle(point p1, point p2, point p3, point &amp;ctr, double &amp;r) {
+   r = rInCircle(p1, p2, p3);
+   if (fabs(r) &lt; EPS) return 0; // no inCircle center
+   line l1, l2; // compute these two angle bisectors
+   double ratio = dist(p1, p2) / dist(p1, p3);
+   point p = translate(p2, scale(toVec(p2, p3), ratio / (1 + ratio)));
+   pointsToLine(p1, p, l1);
+   ratio = dist(p2, p1) / dist(p2, p3);
+   p = translate(p1, scale(toVec(p1, p3), ratio / (1 + ratio)));
+   pointsToLine(p2, p, l2);
+   areIntersect(l1, l2, ctr);
+   return 1; }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbfb6076">
+<h3 id="orgbfb6076">Circumscribed Circles</h3>
+<ul>
+<li>Triangle can be enclosed by an <i>circumscribed cirlce</i>:</li>
+<li>Radius is \(R = {a * b * c / (4 * area(a,b,c)}\)</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >double rCircumCircle(double ab, double bc, double ca) {
+   return ab * bc * ca / (4.0 * area(ab, bc, ca)); }
+double rCircumCircle(point a, point b, point c) {
+   return rCircumCircle(dist(a, b), dist(b, c), dist(c, a)); }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb349088">
+<h3 id="orgb349088">Trigonometrics</h3>
+<dl>
+<dt>Is a triangle possible?</dt><dd>\(a + b > c\), where \(c\) is largest side.</dd>
+<dt>Pythagorean Theorem</dt><dd>\(a^2 + b^2 = c^2 \)</dd>
+<dt>Law of Sines</dt><dd>\( {a \over sin(\alpha)} = {b \over sin(\beta)} = {c \over sin(\gamma)} = 2R \)</dd>
+<dt>Law of Cosines</dt><dd>\( c^ 2 = a^2 + b^ 2 − 2 \times a \times b \times cos(\gamma)  \)</dd>
+
+</dl>
+</section>
+</section>
+</div>
+</div>
+<script src="assets/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+transition:'page', width:1600, height:900,
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+{src: 'reveald3.js'},
+ { src: 'assets/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>

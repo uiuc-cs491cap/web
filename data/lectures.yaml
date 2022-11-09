@@ -77,3 +77,33 @@ points-lines-vectors:
   date: 2022-11-07
   title: Points, Lines, and Vectors
   slug: points-lines-vectors
+
+shapes:
+  date: 2022-11-09
+  title: Shapes
+  slug: shapes
+
+convex-hull:
+  date: 2022-11-14
+  title: Convex Hull
+  slug: convex-hull
+
+combinatorics:
+  date: 2022-11-16
+  title: Combinatorics
+  slug: combinatorics
+
+gcd:
+  date: 2022-11-28
+  title: GCD and Diophantine Equations
+  slug: gcd
+
+segment-trees:
+  date: 2022-11-30
+  title: Segment Trees
+  slug: segment-trees
+
+contest-strategy:
+  date: 2022-12-05
+  title: Contest Strategy
+  slug: contest-strategy

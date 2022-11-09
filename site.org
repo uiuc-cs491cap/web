@@ -415,11 +415,44 @@ We will go over the KMP string matching algorithm.
 :PROPERTIES:
 :EXPORT_FILE_NAME: points-lines-vectors
 :END:
-
-
 *** Slides
 
 - [[../../slides/points-lines-vectors-slides.pdf][Points, Lines, and Vectors]]
+
+** Shapes
+:PROPERTIES:
+:EXPORT_FILE_NAME: shapes
+:END:
+
+*** Slides
+- [[../../slides/shapes.html][Shapes]]
+
+** Convex Hull
+:PROPERTIES:
+:EXPORT_FILE_NAME: convex-hull
+:END:
+
+*** Slides
+
+** Combinatorics
+:PROPERTIES:
+:EXPORT_FILE_NAME: combinatorics
+:END:
+
+** GCD and Diophantine
+:PROPERTIES:
+:EXPORT_FILE_NAME: gcd-and-diophantine
+:END:
+
+** Segment Trees
+:PROPERTIES:
+:EXPORT_FILE_NAME: segment-trees
+:END:
+
+** Contest Strategy
+:PROPERTIES:
+:EXPORT_FILE_NAME: contest-strategy
+:END:
 
 * Videos
 :PROPERTIES:
