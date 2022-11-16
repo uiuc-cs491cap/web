@@ -433,6 +433,7 @@ We will go over the KMP string matching algorithm.
 :END:
 
 *** Slides
+- [[../../slides/convex-hull.html][Convex Hull]]
 
 ** Combinatorics
 :PROPERTIES:

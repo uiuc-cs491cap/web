@@ -5,3 +5,5 @@ draft = false
 +++
 
 ## Slides {#slides}
+
+-   [Convex Hull](../../slides/convex-hull.html)

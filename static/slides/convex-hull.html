@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Polygons and Convex Hull</title>
+<meta name="author" content="Mattox Beckman"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../dist/reveal.css"/>
+
+<link rel="stylesheet" href="../dist/theme/beige.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="../plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Polygons and Convex Hull</h1><h2 class="author">Mattox Beckman</h2>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-orga2fe875">Objectives</a></li>
+<li><a href="#/slide-org0e6cb34">Representation</a></li>
+<li><a href="#/slide-org2a333ee">Getting the Area</a></li>
+<li><a href="#/slide-orgc34a31f">Is it Convex?</a></li>
+<li><a href="#/slide-org8ec0e5c">Convex Hull</a></li>
+<li><a href="#/slide-org935c883">Example</a></li>
+<li><a href="#/slide-org86fb7df">Sorting by Angle</a></li>
+<li><a href="#/slide-org6644f76">Convex Hull</a></li>
+<li><a href="#/slide-orgca9967b">Convex Hull Code, 2</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-orga2fe875">
+<h2 id="orga2fe875">Objectives</h2>
+<ul>
+<li>The the <code>ccw</code> function to check if a polygon is convex or not.</li>
+<li>Compute the perimeter and area or an arbitrary polygon</li>
+<li>Find a polygon (convex hull) that fits a set of points.</li>
+<li>Most code samples from <a href="https://cpbook.net/">Competitive Programming 3.</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0e6cb34">
+<h2 id="org0e6cb34">Representation</h2>
+<ul>
+<li>Represent a polygon using a vector of points.</li>
+<li>Add them in clockwise or counterclockwise order.</li>
+<li>The first point should be re-added as the last point.</li>
+
+</ul>
+
+<span class="left">
+
+<div class="org-src-container">
+
+<pre><code class="c++" >vii mypoly;
+mypoly.push_back(ii(2,2));
+mypoly.push_back(ii(27,10));
+mypoly.push_back(ii(30,25));
+mypoly.push_back(ii(6,20));
+mypoly.push_back(ii(2,20));
+mypoly.push_back(ii(2,2));
+</code></pre>
+</div>
+</span><span class="right">
+<div class="fig-container" data-file="d3-fig/poly-rep.html"/>
+</span>
+
+</section>
+</section>
+<section>
+<section id="slide-org2a333ee">
+<h2 id="org2a333ee">Getting the Area</h2>
+<p>
+\[ A = {1\over 2} \left[\begin{array}{ll} x_0 & y_0 \\ x_1 & y_1 \\ x_2 & y_2 \\ \cdots & \cdots \\ x_n & y_n \\ \end{array} \right] \]
+</p>
+
+<p>
+\[ = \begin{array}{l} x_0 y_1 + x_1 y_2 + \cdots + x_n y_0  \\ - x_1 y_0 - x_2 y_1 - \cdots - x_0 y_n \end{array} \]
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >double area(const vector&lt;point&gt; &amp;P) {
+   double result = 0.0, x1, y1, x2, y2;
+   for (int i = 0; i &lt; (int)P.size()-1; i++) {
+      x1 = P[i].x; x2 = P[i+1].x;
+      y1 = P[i].y; y2 = P[i+1].y;
+      result += (x1 * y2 - x2 * y1);
+   }
+   return fabs(result) / 2.0;
+}
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgc34a31f">
+<h2 id="orgc34a31f">Is it Convex?</h2>
+<ul>
+<li>Check if all turns on the perimeter turn the same way.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >double cross(vec a, vec b) {
+   return a.x*b.y - a.y*b.x;
+}
+
+point ccw(point p, point q, point r) {
+   return cross(toVec(p,q), toVec(p,r)) &gt; EPS;
+}
+
+bool isConvex(const vector&lt;point&gt; &amp;P) {
+   int sz = (int)P.size();
+   if (sz &lt;= 3) return false; // a point/sz=2 or a line/sz=3 is not convex
+   bool isLeft = ccw(P[0], P[1], P[2]); // remember one result
+   for (int i = 1; i &lt; sz-1; i++)       // then compare with the others
+      if (ccw(P[i], P[i+1], P[(i+2) == sz ? 1 : i+2]) != isLeft)
+         return false; // different sign -&gt; this polygon is concave
+   return true;        // this polygon is convex
+}
+</code></pre>
+</div>
+
+<div class="fig-container" data-file="d3-fig/is-convex.html"/>
+
+</section>
+</section>
+<section>
+<section id="slide-org8ec0e5c">
+<h2 id="org8ec0e5c">Convex Hull</h2>
+<ul>
+<li>Given: a bunch of points</li>
+<li>We want: a minimal convex polygon to contain them.</li>
+<li>Basic algorithm:
+<ul>
+<li>Pick lowest point (and rightmost, if tie) as a <i>pivot</i></li>
+<li>Sort the points by the angle to the pivot.  Call these \(p_1, p_2\), etc.</li>
+<li>Push pivot, \(p_1\), to a stack.</li>
+<li>Repeat from \(p_2\):
+<ul>
+<li>Push point to stack</li>
+<li>If (angle of top three points) is clockwise, delete midpoint from stack.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org935c883">
+<h2 id="org935c883">Example</h2>
+<div class="center fig-container" data-file="d3-fig/convex-hull.html"/>
+
+</section>
+</section>
+<section>
+<section id="slide-org86fb7df">
+<h2 id="org86fb7df">Sorting by Angle</h2>
+<div class="org-src-container">
+
+<pre><code class="c++" >point pivot(0, 0);
+bool angleCmp(point a, point b) {// angle-sorting function
+   if (collinear(pivot, a, b)) // special case
+      return dist(pivot, a) &lt; dist(pivot, b);
+ // check which one is closer
+   double d1x = a.x - pivot.x, d1y = a.y - pivot.y;
+   double d2x = b.x - pivot.x, d2y = b.y - pivot.y;
+   return (atan2(d1y, d1x) - atan2(d2y, d2x)) &lt; 0; }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6644f76">
+<h2 id="org6644f76">Convex Hull</h2>
+<div class="org-src-container">
+
+<pre><code class="c++" >vector&lt;point&gt; CH(vector&lt;point&gt; P) {
+   int i, j, n = (int)P.size();
+   if (n &lt;= 3) {
+      if (!(P[0] == P[n-1])) P.push_back(P[0]); // safeguard from corner case
+      return P;
+   }
+
+// first, find P0 = point with lowest Y and if tie: rightmost X
+   int P0 = 0;
+   for (i = 1; i &lt; n; i++)
+      if (P[i].y &lt; P[P0].y || (P[i].y == P[P0].y &amp;&amp; P[i].x &gt; P[P0].x))
+         P0 = i;
+   point temp = P[0]; P[0] = P[P0]; P[P0] = temp; // swap P[P0] with P[0]
+   pivot = P[0];
+   sort(++P.begin(), P.end(), angleCmp);
+
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgca9967b">
+<h2 id="orgca9967b">Convex Hull Code, 2</h2>
+<div class="org-src-container">
+
+<pre><code class="c++" >   vector&lt;point&gt; S;
+   S.push_back(P[n-1]); S.push_back(P[0]); S.push_back(P[1]);
+   i = 2;
+   while (i &lt; n) {
+    // note: N must be &gt;= 3 for this method to work
+      j = (int)S.size()-1;
+      if (ccw(S[j-1], S[j], P[i])) S.push_back(P[i++]); // left turn, accept
+      else S.pop_back();
+   }
+   return S;
+}
+</code></pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'none',
+transitionSpeed: 'default',
+hash:true, respond_to_hash_changes:true, max_scale:2.0, width:1200, height:900, center:false,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealNotes ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+{src: "reveald3.js"}]
+
+});
+</script>
+</body>
+</html>

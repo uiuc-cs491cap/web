@@ -84,26 +84,26 @@ shapes:
   slug: shapes
 
 convex-hull:
-  date: 2022-11-14
+  date: 2022-11-16
   title: Convex Hull
   slug: convex-hull
 
 combinatorics:
-  date: 2022-11-16
+  date: 2022-11-28
   title: Combinatorics
   slug: combinatorics
 
 gcd:
-  date: 2022-11-28
+  date: 2022-11-30
   title: GCD and Diophantine Equations
   slug: gcd
 
 segment-trees:
-  date: 2022-11-30
+  date: 2022-12-05
   title: Segment Trees
   slug: segment-trees
 
 contest-strategy:
-  date: 2022-12-05
+  date: 2022-12-07
   title: Contest Strategy
   slug: contest-strategy
