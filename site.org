@@ -440,6 +440,14 @@ We will go over the KMP string matching algorithm.
 :EXPORT_FILE_NAME: combinatorics
 :END:
 
+*** Slides
+- [[../../slides/basic-combinatorics-slides.pdf][Basic Combinatorics]]
+
+** Dynamic Programming Redux
+:PROPERTIES:
+:EXPORT_FILE_NAME: dynamic-programming-redux
+:END:
+
 ** GCD and Diophantine
 :PROPERTIES:
 :EXPORT_FILE_NAME: gcd-and-diophantine
@@ -450,10 +458,6 @@ We will go over the KMP string matching algorithm.
 :EXPORT_FILE_NAME: segment-trees
 :END:
 
-** Contest Strategy
-:PROPERTIES:
-:EXPORT_FILE_NAME: contest-strategy
-:END:
 
 * Videos
 :PROPERTIES:
