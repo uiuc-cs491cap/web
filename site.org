@@ -450,7 +450,7 @@ We will go over the KMP string matching algorithm.
 
 ** GCD and Diophantine
 :PROPERTIES:
-:EXPORT_FILE_NAME: gcd-and-diophantine
+:EXPORT_FILE_NAME: gcd
 :END:
 
 *** Slides
