@@ -461,6 +461,8 @@ We will go over the KMP string matching algorithm.
 :EXPORT_FILE_NAME: segment-trees
 :END:
 
+*** Slides
+- [[../../slides/segment-tress-slides.pdf][Segment Trees]]
 
 * Videos
 :PROPERTIES:
